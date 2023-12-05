@@ -125,6 +125,7 @@ async def get():
 @app.on_event("startup")
 @repeat_every(seconds=60)
 async def parse_weather(connection : Session = next(get_db())):
+    """ Функция которая обновляет каждую минуту погоду"""
     start = time.time()
 
     count = 0
